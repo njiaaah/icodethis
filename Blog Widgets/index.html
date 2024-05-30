@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main>
+
+        <input type="radio" checked name="search-switch" id="search-switch__tags">
+        <input type="radio" name="search-switch" id="search-switch__search">
+
+        <div class="search__radio-wrapper">
+            <div class="search__radio-labels">
+                <label class="search__radio-label search__radio-label__tags" for="search-switch__tags">Tags</label>
+                <label class="search__radio-label search__radio-label__search" for="search-switch__search">Search</label>
+            </div>
+        </div>
+
+
+
+        <div class="search">
+
+            <div class="search__tags"></div>
+
+            <div class="search__search">
+                <svg class="search__search__svg" xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 256 256"><path fill="currentColor" d="M232.49 215.51L185 168a92.12 92.12 0 1 0-17 17l47.53 47.54a12 12 0 0 0 17-17ZM44 112a68 68 0 1 1 68 68a68.07 68.07 0 0 1-68-68"/></svg>
+                <input class="search__search__input" placeholder="Search articles, topics, etc." type="text">
+                <button class="search__search__button">Search</button>
+            </div>
+
+            <input type="checkbox" name="" id="search__show-more-tags">
+
+            <label class="search__show-more-tags-label" for="search__show-more-tags">tags</label>
+
+        </div>
+
+        <div class="articles__container" id="article__container">
+
+            <h2 class="articles__title">Recent Posts</h2>
+
+        </div>
+
+
+
+    </main>
+
+</body>
+</html>
