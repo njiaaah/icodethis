@@ -5,6 +5,9 @@
     margin: 0;
     padding: 0;
 }
+ul li {
+    list-style: none;
+}
 
 body {
     --clr-contrast-1: hsl(205, 92%, 76%);
