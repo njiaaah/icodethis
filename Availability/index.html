@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="modal__backdrop">
+        </div>
+
+    <main>
+
+        <h1>Click to edit</h1>
+
+        <button class="button-contrast" id="modalOpen">Edit</button>
+
+    </main>
+
+    <dialog id="modal">
+
+        <div class="modal__content">
+        <header>
+
+            <h4>Edit availability</h4>
+
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, exercitationem. Molestias in est!</p>
+
+        </header>
+
+        <div class="modal__inputs">
+
+            <label>
+
+                <input checked type="checkbox" name="modal-chb" id="full-time">
+
+                <span class="checkbox-visual">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path stroke="red" fill="currentColor" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+
+                </span>
+
+                <span class="label__text">Full time</span>
+
+            </label>
+
+            <label>
+
+                <input checked type="checkbox" name="modal-chb" id="freelance">
+
+                <span class="checkbox-visual">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24"><path stroke="red" fill="transparent" d="m9.55 15.15l8.475-8.475q.3-.3.7-.3t.7.3t.3.713t-.3.712l-9.175 9.2q-.3.3-.7.3t-.7-.3L4.55 13q-.3-.3-.288-.712t.313-.713t.713-.3t.712.3z"/></svg>
+
+                </span>
+
+                <span class="label__text">Freelance & Projects</span>
+
+            </label>
+            
+
+        </div>
+
+        <footer>
+
+            <button class="button-contrast">Done</button>
+            <button >Cancel</button>
+
+        </footer>
+        </div>
+
+
+
+
+
+
+
+
+    </dialog>
+    
+
+
+</body>
+</html>
