@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+
+body {
+	--clr-contrast-1: #35366a;
+	--clr-contrast-2: #b33458;
+	--clr-black: #353535;
+	--clr-bg: rgb(248, 248, 213);
+	font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	display: grid;
+	place-items: center;
+	min-height: 100dvh;
+	color: var(--clr-contrast-1);
+	background-color: var(--clr-bg);
+}
+
+.disclaimer {
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+	font-size: 0.66rem;
+	padding-block: 1rem 2rem;
+}
+
+.disclaimer .example {
+	display: block;
+	width: 16px;
+	aspect-ratio: 1/1;
+	background-color: var(--_color);
+}
+.disclaimer > * {
+	display: flex;
+	gap: 0.33rem;
+	align-items: center;
+}
+
+.disclaimer__likes {
+	--_color: var(--clr-contrast-1);
+}
+
+.disclaimer__dislikes {
+	--_color: var(--clr-contrast-2);
+}
+
+main {
+	background-color: white;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+	padding: 2rem 3rem;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	display: grid;
+	place-items: center;
+}
+header {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.33rem;
+	padding-block: 1rem;
+}
+header h2 {
+	font-size: 1.16rem;
+}
+
+header span {
+	font-size: 0.88rem;
+	text-transform: uppercase;
+	font-weight: 700;
+	opacity: 0.5;
+}
+
+.graph-wrapper {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-rows: auto auto;
+	gap: 1rem;
+	margin-bottom: 2rem;
+	font-size: 0.66rem;
+	font-weight: 700;
+}
+.graph__left-side {
+	display: flex;
+	flex-direction: column-reverse;
+	height: 150px;
+	width: 30px;
+	justify-content: space-between;
+}
+
+.graph__left-side span {
+	width: fit-content;
+	margin-left: auto;
+	height: 1rem;
+	animation: fade-in 350ms forwards;
+	-webkit-animation: fade-in 350ms forwards;
+	transition: opacity 300ms;
+	-webkit-transition: opacity 300ms;
+	-moz-transition: opacity 300ms;
+	-ms-transition: opacity 300ms;
+	-o-transition: opacity 300ms;
+}
+
+.graph__bottom-side {
+	grid-column: 2/3;
+	display: flex;
+	gap: 15px;
+	padding-inline: 15px;
+}
+.graphs__inner__lines hr {
+	border: dotted 0.5px;
+	opacity: 0.25;
+}
+
+.graph__bottom__day {
+	width: 30px;
+}
+.graph__inner {
+	display: flex;
+	padding-inline: 15px;
+	gap: 15px;
+	justify-content: end;
+	position: relative;
+}
+.graphs__inner__lines {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.graphs__inner__lines span {
+	height: 1rem;
+	display: flex;
+	align-items: center;
+}
+.graph {
+	display: grid;
+	grid-template-columns: 10px 10px;
+	grid-template-rows: 0fr;
+	gap: 3px;
+	width: 30px;
+	scale: 1 -1;
+	transition: grid 350ms ease-out 000ms;
+	-webkit-transition: grid 350ms ease-out 000ms;
+	-moz-transition: grid 350ms ease-out 000ms;
+	-ms-transition: grid 350ms ease-out 000ms;
+	-o-transition: grid 350ms ease-out 000ms;
+}
+/* lol */
+.margintopauto {
+	grid-column: 1 / 3;
+	grid-row: 1 /2;
+}
+
+.graph span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-color: var(--_color);
+	position: relative;
+	transform-origin: 000% 000%;
+	transition: opacity 250ms;
+	-webkit-transition: opacity 250ms;
+	-moz-transition: opacity 250ms;
+	-ms-transition: opacity 250ms;
+	-o-transition: opacity 250ms;
+}
+
+.graph span:hover::after {
+	opacity: 1;
+	transform: translate(-0%, -125%);
+	-webkit-transform: translate(-0%, -125%);
+	-moz-transform: translate(-0%, -125%);
+	-ms-transform: translate(-0%, -125%);
+	-o-transform: translate(-0%, -125%);
+}
+.graph span:hover {
+	z-index: 10;
+}
+/* .graph span:hover::before {
+	opacity: 1;
+	transform: translate(20%, 180%) rotate(45deg);
+	-webkit-transform: translate(20%, 180%) rotate(45deg);
+	-moz-transform: translate(20%, 180%) rotate(45deg);
+	-ms-transform: translate(20%, 180%) rotate(45deg);
+	-o-transform: translate(20%, 180%) rotate(45deg);
+	transition: transform 350ms ease-out, opacity 150ms ease-out 100ms;
+	-webkit-transition: transform 350ms ease-out, opacity 150ms ease-out 100ms;
+	-moz-transition: transform 350ms ease-out, opacity 150ms ease-out 100ms;
+	-ms-transition: transform 350ms ease-out, opacity 150ms ease-out 100ms;
+	-o-transition: transform 350ms ease-out, opacity 150ms ease-out 100ms;
+}
+.graph span::before {
+	content: "";
+	opacity: 0;
+	width: 8px;
+	height: 8px;
+	display: block;
+	position: absolute;
+	background-color: var(--_color);
+	bottom: 0;
+	transform: translate(20%, 00%) rotate(45deg);
+	-webkit-transform: translate(20%, 00%) rotate(45deg);
+	-moz-transform: translate(20%, 00%) rotate(45deg);
+	-ms-transform: translate(20%, 00%) rotate(45deg);
+	-o-transform: translate(20%, 00%) rotate(45deg);
+	transition: transform 350ms ease-out, opacity 150ms;
+	-webkit-transition: transform 350ms ease-out, opacity 150ms;
+	-moz-transition: transform 350ms ease-out, opacity 150ms;
+	-ms-transition: transform 350ms ease-out, opacity 150ms;
+	-o-transition: transform 350ms ease-out, opacity 150ms;
+} */
+.graph span::after {
+	opacity: 0;
+	font-size: 0.66rem;
+	font-weight: 700;
+	color: white;
+	background-color: var(--_color);
+	padding: 4px 10px;
+	content: attr(data-value);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	scale: 1 -1;
+	text-align: center;
+	transform: translate(-0%, -00%);
+	-webkit-transform: translate(-0%, -00%);
+	-moz-transform: translate(-0%, -00%);
+	-ms-transform: translate(-0%, -00%);
+	-o-transform: translate(-0%, -00%);
+	transition: transform 350ms ease-out, opacity 250ms;
+	-webkit-transition: transform 350ms ease-out, opacity 250ms;
+	-moz-transition: transform 350ms ease-out, opacity 250ms;
+	-ms-transition: transform 350ms ease-out, opacity 250ms;
+	-o-transition: transform 350ms ease-out, opacity 250ms;
+	user-select: none;
+}
+.likes {
+	--_color: var(--clr-contrast-1);
+}
+.dislikes {
+	--_color: var(--clr-contrast-2);
+}
+.graph__inner:has(.graph span:hover) .graph span {
+	opacity: 0.25;
+}
+
+.graph__inner:has(.graph span:hover) .graph span:hover {
+	opacity: 1;
+}
+.details-container {
+	width: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.details-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+.details-title {
+	width: 100%;
+	font-size: 0.66rem;
+	font-weight: 700;
+}
+#maxValueInput,
+#minValueInput {
+	width: 80%;
+	margin-right: 0.33rem;
+}
+#details__max-value-label,
+#details__min-value-label {
+	font-size: 0.66rem;
+	font-weight: 700;
+	height: 20%;
+}
+
+.details-container button {
+	outline: none;
+	border: none;
+	font-size: 0.66rem;
+	padding: 8px 20px;
+	font-weight: 600;
+	border: 2px solid var(--clr-contrast-1);
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-ms-border-radius: 4px;
+	-o-border-radius: 4px;
+	width: fit-content;
+	margin: 0 auto;
+	transition: color 300ms, background-color 300ms, scale 150ms;
+	-webkit-transition: color 300ms, background-color 300ms, scale 150ms;
+	-moz-transition: color 300ms, background-color 300ms, scale 150ms;
+	-ms-transition: color 300ms, background-color 300ms, scale 150ms;
+	-o-transition: color 300ms, background-color 300ms, scale 150ms;
+	cursor: pointer;
+}
+
+.details-container button:hover {
+	background-color: var(--clr-contrast-1);
+	color: white;
+	scale: 1.025;
+}
+
+.details-container button:active {
+	scale: 0.925;
+}
+
+.logo-container svg:nth-child(1) {
+	scale: -1.5 1.5;
+	rotate: 13deg;
+	transform: translate(-5%, 0);
+	-webkit-transform: translate(-5%, 0);
+	-moz-transform: translate(-5%, 0);
+	-ms-transform: translate(-5%, 0);
+	-o-transform: translate(-5%, 0);
+}
+.logo-container svg:nth-child(2) {
+	fill: var(--clr-contrast-2);
+	scale: 1.5 1.5;
+	rotate: -13deg;
+	transform: translate(-5%, 0);
+	-webkit-transform: translate(-5%, 0);
+	-moz-transform: translate(-5%, 0);
+	-ms-transform: translate(-5%, 0);
+	-o-transform: translate(-5%, 0);
+}
+
+.fading {
+	animation: fade-out 350ms forwards !important;
+	-webkit-animation: fade-out 350ms forwards !important;
+}
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+	from {
+		opacity: 1;
+	}
+}
