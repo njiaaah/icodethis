@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" data-author="https://icodethis.com/njiah">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <dialog id="modal">
+
+        <article>
+
+            <header>
+
+                <h4>Send us some feedback!</h4>
+
+                <div id="modalClose"></div>
+
+            </header>
+
+
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt, similique.</p>
+
+            <form>
+
+                <textarea class="" id="modalText" rows="5" placeholder="Type whatever you wonna type..."></textarea>
+
+                <div class="" id="radio-wrapper">
+
+                    <label>
+                        <input checked data-type="Bug" type="radio" name="radio" id="radio-01">
+                        <span class="radio-thingy-but-it-looks-nice"></span>
+                        <span class="radio-text">Bug</span>
+                    </label>
+
+                    <label>
+                        <input data-type="Comment" type="radio" name="radio" id="radio-02">
+                        <span class="radio-thingy-but-it-looks-nice"></span>
+                        <span class="radio-text">Comment</span>
+                    </label>
+
+                    <label>
+                        <input data-type="Other" type="radio" name="radio" id="radio-03">
+                        <span class="radio-thingy-but-it-looks-nice"></span>
+                        <span class="radio-text">Other</span>
+                    </label>
+
+
+                </div>
+
+                <input id="formSubmitBtn" type="submit" value="Send Feedback">
+
+            </form>
+
+
+
+        </article>
+
+    </dialog>
+
+    <main>
+
+        <table class="table" id="table">
+            <tr>
+                <th>Type</th>
+                <th>Text</th>
+                <th>Time</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Bug</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>07:15</td>
+                <td><button>delete</button></td>
+            </tr>
+            <tr>
+                <td>Bug</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>22:15</td>
+                <td><button>delete</button></td>
+            </tr>
+            <tr>
+                <td>Bug</td>
+                <td>Lorem ipsum dolor sit amet.</td>
+                <td>18:35</td>
+                <td><button>delete</button></td>
+            </tr>
+        </table>
+
+        <button id="showModal">Submit Feedback</button>
+    </main>
+
+
+
+</body>
+
+</html>
