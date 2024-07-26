@@ -22,5 +22,15 @@ body {
 
     color: var(--clr-black);
     background-color: var(--clr-bg);
-
+}
+button {
+    transition: scale 300ms ease-out;
+    -webkit-transition: scale 300ms ease-out;
+    -moz-transition: scale 300ms ease-out;
+    -ms-transition: scale 300ms ease-out;
+    -o-transition: scale 300ms ease-out;
+    cursor: pointer;
+}
+button:active {
+    scale: .95;
 }
