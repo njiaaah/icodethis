@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <main>
+
+        <header>
+
+            <div class="logo-container">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                    <path fill="currentColor"
+                        d="M173.19 155c-9.92 17.16-26.39 27-45.19 27s-35.27-9.84-45.19-27a6 6 0 0 1 10.38-6c7.84 13.54 20.2 21 34.81 21s27-7.46 34.81-21a6 6 0 1 1 10.38 6M230 128A102 102 0 1 1 128 26a102.12 102.12 0 0 1 102 102m-12 0a90 90 0 1 0-90 90a90.1 90.1 0 0 0 90-90M92 118a10 10 0 1 0-10-10a10 10 0 0 0 10 10m72-20a10 10 0 1 0 10 10a10 10 0 0 0-10-10" />
+                </svg>
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256">
+                    <path fill="#b33458"
+                        d="M128 26a102 102 0 1 0 102 102A102.12 102.12 0 0 0 128 26m0 192a90 90 0 1 1 90-90a90.1 90.1 0 0 1-90 90M82 108a10 10 0 1 1 10 10a10 10 0 0 1-10-10m92 0a10 10 0 1 1-10-10a10 10 0 0 1 10 10m-.81 65a6 6 0 0 1-10.38 6c-7.84-13.54-20.2-21-34.81-21s-27 7.46-34.81 21a6 6 0 0 1-5.2 3a5.9 5.9 0 0 1-3-.81a6 6 0 0 1-2.18-8.19c9.92-17.16 26.39-27 45.19-27s35.27 9.84 45.19 27" />
+                </svg>
+
+
+
+            </div>
+
+            <h2>Likes vs. Dislikes</h2>
+
+            <span>Past 7 days</span>
+
+        </header>
+
+        <div class="disclaimer">
+            <span class="disclaimer__likes">
+                <span class="example"></span>
+                <span>Likes</span>
+            </span>
+            <span class="disclaimer__dislikes">
+                <span class="example"></span>
+                <span>Dislikes</span>
+            </span>
+        </div>
+
+        <div class="graph-wrapper">
+
+            <div class="graph__left-side" id="leftSideBar">
+            </div>
+            <div class="graph__inner">
+
+                <div class="graphs__inner__lines" id="graphLinesContainer">
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+
+
+                </div>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+                <span class="graph">
+                    <span class="likes"></span>
+                    <span class="dislikes"></span>
+                </span>
+
+            </div>
+            <div class="graph__bottom-side">
+                <span class="graph__bottom__day">Mon</span>
+                <span class="graph__bottom__day">Tue</span>
+                <span class="graph__bottom__day">Wed</span>
+                <span class="graph__bottom__day">Thu</span>
+                <span class="graph__bottom__day">Fri</span>
+                <span class="graph__bottom__day">Sat</span>
+                <span class="graph__bottom__day">Sun</span>
+            </div>
+
+        </div>
+
+
+        <div class="details-container">
+
+            <div class="details-wrapper">
+                <span class="details-title">Max value</span>
+                <input type="range" id="maxValueInput" value="500" min="100" max="1000">
+                <span class="details-text" id="details__max-value-label">500</span>
+            </div>
+
+            <div class="details-wrapper">
+                <button id="randomizeBtn">Randomize</button>
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+
+
+</body>
+
+</html>
