@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+ul li {
+	list-style: none;
+}
+
+body {
+	--clr-contrast-1: hsl(205, 92%, 76%);
+	--clr-black: #353535;
+	--clr-bg: rgb(237, 245, 255);
+	font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+	display: grid;
+	place-items: center;
+	min-height: 100dvh;
+	color: var(--clr-black);
+	background-color: var(--clr-bg);
+}
+
+section {
+	max-height: 0;
+	height: 0;
+	opacity: 0;
+	overflow: clip;
+}
+
+section {
+	transition: all 350ms ease-out;
+}
+
+input[type="radio"] {
+	display: none;
+}
+
+label:has(:checked) {
+	box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+#container:has(header label:nth-child(1) :checked) section:nth-of-type(1),
+#container:has(header label:nth-child(2) :checked) section:nth-of-type(2),
+#container:has(header label:nth-child(3) :checked) section:nth-of-type(3) {
+	max-height: fit-content;
+	height: fit-content;
+	opacity: 1;
+	overflow: auto;
+}
+
+#container header label:has(:checked) {
+	background-color: white;
+}
+
+label[data-val]::after {
+	content: attr(data-val);
+}
+
+label[data-val] {
+	--_color: #ff0000;
+}
+
+[data-val]::before {
+	content: "";
+	display: block;
+	height: 20px;
+	aspect-ratio: 1;
+	background: var(--_color);
+	border-radius: 100%;
+	outline: 1px solid rgb(235, 235, 235);
+}
+
+.color-input-label:hover {
+	scale: 0.95;
+}
+.cool-link {
+	width: fit-content;
+	transition: all 300ms ease-out;
+}
+.cool-link::after {
+	display: block;
+	width: 100%;
+	padding-right: 25%;
+	content: attr(href);
+	font-size: 10px;
+	text-wrap: wrap;
+	order: 3;
+	transition: all 300ms ease-in-out;
+	opacity: 0.5;
+}
+
+.cool-link::before {
+	content: "";
+	order: 2;
+	width: fit-content;
+	margin-left: auto;
+	width: 1.5em;
+	aspect-ratio: 1;
+	opacity: 0.5;
+	--svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1024 1024'%3E%3Cpath fill='%23000' d='M340.864 149.312a30.59 30.59 0 0 0 0 42.752L652.736 512L340.864 831.872a30.59 30.59 0 0 0 0 42.752a29.12 29.12 0 0 0 41.728 0L714.24 534.336a32 32 0 0 0 0-44.672L382.592 149.376a29.12 29.12 0 0 0-41.728 0z'/%3E%3C/svg%3E");
+	background-color: currentColor;
+	-webkit-mask-image: var(--svg);
+	mask-image: var(--svg);
+	-webkit-mask-repeat: no-repeat;
+	mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+	mask-size: 100% 100%;
+	transition: all 300ms ease-in-out;
+}
+
+.cool-link:hover {
+	scale: 0.98;
+}
+
+.cool-link:hover::after {
+	transform: translateX(5px);
+	scale: 1.02;
+	transform-origin: 0% 0%;
+}
