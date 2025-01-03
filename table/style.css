@@ -62,6 +62,7 @@ table {
 	min-width: 100%;
 	border-collapse: collapse;
 	table-layout: fixed;
+	margin-bottom: 1rem;
 }
 
 table th {
@@ -84,6 +85,14 @@ table > tr {
 	outline: 1px solid rgba(199, 199, 199, 0.47);
 	border-radius: 0.33rem;
 	color: #353535;
+	position: relative;
+	transition: box-shadow 50ms ease-in, scale 50ms ease-in;
+}
+table > tr:hover {
+	box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+	z-index: 1;
+	scale: 1.01;
+	cursor: pointer;
 }
 
 table tr th:first-of-type,
@@ -103,4 +112,62 @@ table tr td:nth-of-type(3) {
 table tr th:nth-of-type(4),
 table tr td:nth-of-type(4) {
 	width: 25%;
+}
+
+thead label {
+	position: relative;
+}
+
+thead label::after {
+	content: " ˅";
+	display: block;
+	position: absolute;
+	transform: scaleX(2) translateX(115%);
+	right: 0;
+	bottom: 0;
+	opacity: 0.5;
+	transform-origin: center center;
+	transition: transform 250ms ease-in;
+}
+thead label:has(+ input:checked)::after {
+	transform: scaleX(2) translateX(115%) rotate(180deg);
+}
+
+#entriesSelect {
+	margin: 0.33rem;
+	padding: 0.12rem;
+}
+
+#prev svg {
+	rotate: 180deg;
+}
+.page-controls {
+	display: flex;
+	justify-content: end;
+	gap: 0.5rem;
+}
+
+.page-controls button {
+	padding: 0.25rem 0.75rem;
+	background-color: white;
+	border: none;
+	outline: 1px solid #353535;
+	border-radius: 0.15rem;
+	display: flex;
+	align-items: center;
+	gap: 0.2rem;
+	cursor: pointer;
+	transition: scale 200ms ease-in;
+}
+
+.page-controls button:active {
+	scale: 0.8;
+}
+.page-controls .button_inactive:active {
+	scale: 1;
+}
+
+.page-controls .button_inactive {
+	opacity: 0.5;
+	cursor: not-allowed;
 }

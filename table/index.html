@@ -18,24 +18,12 @@
             <div class="filter__entries">
                 Show
                 <select id="entriesSelect" name="entriesSelect" class="filter__entries__select">
-                    <option value="8">8</option>
-                    <option value="16" selected>16</option>
-                    <option value="24">24</option>
+                    <option value="4">4</option>
+                    <option value="8" selected>8</option>
+                    <option value="12">12</option>
                 </select>
                 entries
             </div>
-
-
-            <label for="filter__search" class="filter__search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
-                    stroke-width="1.5" stroke="currentColor" class="size-2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                </svg>
-
-                <input type="text" id="filter__search">
-
-            </label>
         </div>
 
         <table id="table">
@@ -49,6 +37,22 @@
                 </tr>
             </thead>
         </table>
+
+        <div class="page-controls">
+            <button id="prev" class="button_inactive">
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+                Previous</button>
+            <button id="next">
+                Next
+                <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                </svg>
+            </button>
+        </div>
 
     </main>
 

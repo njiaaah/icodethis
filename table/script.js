@@ -225,16 +225,19 @@ const mockData = [
 
 // init
 
-let entries = 16;
+let entries = 8;
 let waitBeforeAppear = 0;
+let currentPage = 0;
 
-function buildTable(entries, data) {
+function buildTable(entries, data, currentPage) {
 	const table = document.getElementById("table");
 	clearTable();
-	let counter = 0;
-	data.forEach((user) => {
-		counter++;
-		if (counter > entries) return;
+	dataToRender = data.slice(
+		currentPage * entries,
+		currentPage * entries + entries
+	);
+
+	dataToRender.forEach((user) => {
 		const tr = document.createElement("tr");
 		Object.values(user).forEach((value) => {
 			const td = document.createElement("td");
@@ -260,7 +263,7 @@ function clearTable() {
 	userRows.forEach((row) => row.remove());
 }
 
-buildTable(entries, mockData);
+buildTable(entries, mockData, 0);
 
 // functions
 
@@ -269,8 +272,12 @@ buildTable(entries, mockData);
 const entriesSelect = document.getElementById("entriesSelect");
 
 entriesSelect.addEventListener("change", () => {
-	entries = entriesSelect.value;
-	buildTable(entries, mockData);
+	console.log(entriesSelect.value);
+	entries = parseInt(entriesSelect.value);
+	currentPage = 0;
+	const lastPageIndex = Math.ceil(mockData.length / entries);
+	updatePageControls(0, lastPageIndex);
+	buildTable(entries, mockData, 0);
 });
 
 // sort by
@@ -300,6 +307,42 @@ radios.forEach((radio) => {
 				(a, b) => new Date(a.createdAt) - new Date(b.createdAt)
 			);
 		}
-		buildTable(entries, data);
+		currentPage = 0;
+		const lastPageIndex = Math.ceil(mockData.length / entries);
+		updatePageControls(0, lastPageIndex);
+		buildTable(entries, data, 0);
 	});
 });
+
+// chabnging index page
+
+const next = document.getElementById("next");
+const prev = document.getElementById("prev");
+
+prev.addEventListener("click", (e) => {
+	if (e.target.classList.contains("button_inactive")) {
+		return;
+	}
+	const lastPageIndex = Math.ceil(mockData.length / entries);
+	currentPage > 0 ? currentPage-- : "";
+	updatePageControls(currentPage, lastPageIndex);
+	buildTable(entries, mockData, currentPage);
+});
+next.addEventListener("click", (e) => {
+	if (e.target.classList.contains("button_inactive")) {
+		return;
+	}
+	const lastPageIndex = Math.floor(mockData.length / entries);
+	currentPage < lastPageIndex ? currentPage++ : "";
+	updatePageControls(currentPage, lastPageIndex);
+	buildTable(entries, mockData, currentPage);
+});
+
+function updatePageControls(currentPage, lastPageIndex) {
+	currentPage === lastPageIndex
+		? next.classList.add("button_inactive")
+		: next.classList.remove("button_inactive");
+	currentPage === 0
+		? prev.classList.add("button_inactive")
+		: prev.classList.remove("button_inactive");
+}
