@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" data-author="https://icodethis.com/njiah">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+
+    <main>
+
+        <div class="filter">
+            <div class="filter__entries">
+                Show
+                <select id="entriesSelect" name="entriesSelect" class="filter__entries__select">
+                    <option value="8">8</option>
+                    <option value="16" selected>16</option>
+                    <option value="24">24</option>
+                </select>
+                entries
+            </div>
+
+
+            <label for="filter__search" class="filter__search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24"
+                    stroke-width="1.5" stroke="currentColor" class="size-2">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+
+                <input type="text" id="filter__search">
+
+            </label>
+        </div>
+
+        <table id="table">
+            <thead>
+                <tr>
+                    <th><label for="firstName">First name</label><input type="radio" name="radio" id="firstName"></th>
+                    <th><label for="lastName">Last name</label><input type="radio" name="radio" id="lastName">
+
+                    <th><label for="email">Email</label><input type="radio" name="radio" id="email"></th>
+                    <th><label for="createdAt">Created at</label><input type="radio" name="radio" id="createdAt"></th>
+                </tr>
+            </thead>
+        </table>
+
+    </main>
+
+
+</body>
+
+</html>
